@@ -380,7 +380,8 @@ def main():
     """, unsafe_allow_html=True)
     
     # Initialize OpenAI client
-    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+    api_key = st.secrets["openai"]["OPENAI_API_KEY"]
+    client = OpenAI(api_key=api_key)
     
     # Sidebar navigation with professional styling
     st.sidebar.markdown("### 🎛️ System Navigation")
